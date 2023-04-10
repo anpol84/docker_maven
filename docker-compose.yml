@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  mysql:
+   mysql:
       image: mysql:latest
       command: mysqld —port=3307
       restart: always
       ports:
-          - '3307:3307'
+         - '3307:3307'
       environment:
          MYSQL_ROOT_PASSWORD: password
          MYSQL_DATABASE: maven-db
@@ -14,11 +14,11 @@ services:
          - maven-data:/var/lib/mysql
       networks:
          - maven-network
-
-  docker_maven:
+   docker_maven:
       build: .
       ports:
          - '9090:9090'
+      restart: always
       environment:
          SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/maven-db
          SPRING_DATASOURCE_USERNAME: root
