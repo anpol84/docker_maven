@@ -7,6 +7,6 @@ COPY . .
 
 RUN mvn clean package
 
-EXPOSE 80
+EXPOSE 9090
 
 CMD ["java", "-jar", "/app/target/docker_maven-0.1.0.jar"]
