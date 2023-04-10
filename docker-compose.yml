@@ -3,6 +3,10 @@ version: '3'
 services:
   mysql:
       image: mysql:latest
+      command: mysqld —port=3307
+      restart: always
+      ports:
+          - '3307:3307'
       environment:
          MYSQL_ROOT_PASSWORD: password
          MYSQL_DATABASE: maven-db
