@@ -17,13 +17,13 @@ services:
    docker_maven:
       build: .
       ports:
-         - '9090:9090'
+         - '8081:8081'
       restart: always
       environment:
          SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3307/maven-db
          SPRING_DATASOURCE_USERNAME: root
          SPRING_DATASOURCE_PASSWORD: password
-         SERVER_PORT: 9090
+         SERVER_PORT: 8081
       depends_on:
          - mysql
       networks:
